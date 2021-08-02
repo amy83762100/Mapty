@@ -1,6 +1,6 @@
 # Mapty
 
-https://forkify-portfolio.netlify.app/
+https://mapty-portfolio.netlify.app/
 
 Mapty is a fitness tracker allow you quickly record your workout progress.
 
