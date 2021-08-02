@@ -1,0 +1,89 @@
+/* Big tablet to 1200px (widths smaller than the 1140 row)*/
+@media only screen and (max-width: 1200px) {
+}
+/* Small tablet to  big tablets: from 768px to 1023px */
+@media only screen and (max-width: 1023px) {
+  body {
+    padding: 0.5rem;
+  }
+  .sidebar {
+    flex-basis: 35rem;
+    padding: 3rem 0.5rem 4rem 0.5rem;
+  }
+  .form {
+    padding: 1.5rem 0.5rem;
+    gap: 0.5rem 1.5rem;
+  }
+  .form_label {
+    font-size: 1rem;
+  }
+  .form_input {
+    padding: 0.3rem 0.5rem;
+    font-size: 1rem;
+  }
+  .workout {
+    padding: 1.5rem 0.2rem;
+  }
+  .workout_title {
+    font-size: 1.5rem;
+  }
+  .workout_closeBtn {
+    font-size: 2rem;
+  }
+  .workout_icon {
+    font-size: 1.3rem;
+    margin-right: 0.2rem;
+    height: 0.28rem;
+  }
+  .workout_value {
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+  }
+  .workout_unit {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  .sort_option {
+    top: 17rem;
+  }
+  .msg {
+    width: 65%;
+  }
+  h1 {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Small phone to  Small tablets: from 481px to 767px */
+@media only screen and (max-width: 767px) {
+}
+/* Small phone from 0 to 480px */
+@media only screen and (max-width: 480px) {
+  body {
+    flex-direction: column;
+  }
+  .sidebar {
+    flex-basis: 0;
+    height: fit-content;
+    padding: 1rem;
+  }
+  .workouts {
+    height: 53%;
+  }
+  .logo {
+    height: 3rem;
+    margin-bottom: 0;
+  }
+  .copyright {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+  }
+  .btn_closeSideBar {
+    display: block;
+  }
+  .sidebarContent.hidden {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=index.9324e22d.css.map */

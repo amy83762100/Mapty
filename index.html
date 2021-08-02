@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/png" href="./src/img/icon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <link rel="stylesheet" href="./src/css/queries.css" />
+    <title>Mapty</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    ></script>
+    <script defer src="./src/js/script.js"></script>
+  </head>
+  <body>
+    <div class="sidebar">
+      <img src="./src/img/logo.png" alt="Logo" class="logo" />
+      <button class="btn_closeSideBar">≡</button>
+      <div class="sidebarContent hidden">
+        <div class="control">
+          <button class="btn btn_sort">Sort &or;</button>
+          <div class="sort_option hidden">
+            <button class="btn_option btn_newest">Newest on top</button>
+            <button class="btn_option btn_oldest">Oldest on top</button>
+          </div>
+          <div>
+            <button class="btn btn_overview">Overview</button>
+            <button class="btn btn_deleteAll">Delete All</button>
+          </div>
+        </div>
+        <form class="form hidden">
+          <div class="form_row">
+            <label class="form_label">Type</label>
+            <select class="form_input form_input-type">
+              <option value="running" selected>Running</option>
+              <option value="cycling">Cycling</option>
+            </select>
+          </div>
+          <div class="form_row">
+            <label class="form_label" for="distance">Distance</label>
+            <input
+              class="form_input form_input-distance"
+              type="text"
+              placeholder="km"
+              id="distance"
+            />
+          </div>
+          <div class="form_row">
+            <label class="form_label" for="duration">Duration</label>
+            <input
+              class="form_input form_input-duration"
+              type="text"
+              placeholder="min"
+              id="duration"
+            />
+          </div>
+          <div class="form_row">
+            <label class="form_label" for="cadence">Cadence</label>
+            <input
+              class="form_input form_input-cadence"
+              type="text"
+              placeholder="step/min"
+              id="cadence"
+            />
+          </div>
+          <div class="form_row form_row-hidden">
+            <label class="form_label" for="elevGain">Elev Gain</label>
+            <input
+              class="form_input form_input-elevGain"
+              type="text"
+              placeholder="meter"
+              id="elevGain"
+            />
+          </div>
+          <button type="submit" class="form_btn"></button>
+        </form>
+        <ul class="workouts">
+          <!-- <li class="workout workout-running" data-id="1234567890">
+          <h2 class="workout_title">Running on April 14</h2>
+          <button class="workout_closeBtn">&times;</button>
+          <form class="workout_form">
+            <div class="workout_details">
+              <label class="workout_icon">🏃‍♂️</label>
+              <input class="workout_input workout_input-distance" type="text" />
+              <span class="workout_unit">km</span>
+            </div>
+            <div class="workout_details">
+              <label class="workout_icon">⏱</label>
+              <input class="workout_input workout_input-duration" type="text" />
+              <span class="workout_unit">min</span>
+            </div>
+            <div class="workout_details">
+              <span class="workout_icon">⚡️</span>
+              <span class="workout_input workout_input-pace">4.6</span>
+              <span class="workout_unit">min/km</span>
+            </div>
+            <div class="workout_details">
+              <label class="workout_icon">🦶🏼</label>
+              <input class="workout_input workout_input-cadence" type="text" />
+              <span class="workout_unit">spm</span>
+            </div>
+          </form>
+          <button type="submit" class="form_btn"></button>
+        </li>
+
+        <li class="workout workout-cycling" data-id="1234567891">
+          <h2 class="workout_title">Cycling on April 5</h2>
+          <button class="workout_closeBtn">&times;</button>
+          <form class="workout_form">
+            <div class="workout_details">
+              <label class="workout_icon">🚴‍♀️‍</label>
+              <input class="workout_input workout_input-distance" type="text" />
+              <span class="workout_unit">km</span>
+            </div>
+            <div class="workout_details">
+              <label class="workout_icon">⏱</label>
+              <input class="workout_input workout_input-duration" type="text" />
+              <span class="workout_unit">min</span>
+            </div>
+            <div class="workout_details">
+              <span class="workout_icon">⚡️</span>
+              <span class="workout_input workout_input-speed">16</span>
+              <span class="workout_unit">km/h</span>
+            </div>
+            <div class="workout_details">
+              <label class="workout_icon">⛰</label>
+              <input class="workout_input workout_input-elevGain" type="text" />
+              <span class="workout_unit">m</span>
+            </div>
+          </form>
+          <button type="submit" class="form_btn"></button>
+        </li> -->
+        </ul>
+
+        <p class="copyright">
+          &copy; Copyright by
+          <a
+            class="twitter-link"
+            target="_blank"
+            href="https://twitter.com/jonasschmedtman"
+            >Jonas Schmedtmann</a
+          >. Built by Pei-Yi Lin.
+        </p>
+      </div>
+    </div>
+    <div class="confirmation_msg hidden">
+      <div class="msg">
+        <h1>Are you sure you want to clear all entries?</h1>
+        <div class="msg_buttons">
+          <button class="btn btn_yesDelete">YES</button>
+          <button class="btn btn_noDelete">NO</button>
+        </div>
+      </div>
+    </div>
+    <div id="map"></div>
+  </body>
+</html>
